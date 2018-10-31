@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+
+<style type="text/css">
+
+</style>
+
+
+
+
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="/common/css/common.css">
+
+<script type="text/javascript" src="/common/js/jquery-3.3.1.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function(){
+	// 상단 메뉴에 마우스 오버시 하위 메뉴 나오게 하기
+	$('#gnb li').mouseenter(function(){
+		$('header').addClass('on');
+		$('#gnb li').addClass('on');
+	});
+	
+	// 상단 메뉴에 마우스 아웃시 하위 메뉴 숨기기
+	$('#gnb').mouseleave(function(){
+		$('#gnb li').removeClass('on');
+		$('header').removeClass('on');
+	});
+	
+	// 모바일 사이즈에서 모바일메뉴를 클릭시 모바일용 메뉴 보이기 (반응형)
+	$(".btn").click(function () {
+		$("#menu,.page_cover,html").addClass("open"); // 메뉴 버튼을 눌렀을때 메뉴, 커버, html에 open 클래스를 추가해서 효과를 준다.
+		window.location.hash = "#open"; // 페이지가 이동한것 처럼 URL 뒤에 #를 추가해 준다. });
+	});
+
+	// 모바일 메뉴 닫기
+	window.onhashchange = function () { 
+		if (location.hash != "#open") { 
+			// URL에 #가 있을 경우 아래 명령을 실행한다. 
+			$("#menu,.page_cover,html").removeClass("open"); // open 클래스를 지워 원래대로 돌린다. } };
+		}
+	}
+	
+	// 메뉴 아코디언 형식으로 나타내기
+	$('.mMenuList li > a').on('click', function(e){
+		e.preventDefault();
+		
+		$('.mMenuList li').removeClass('on');
+		
+		if($(this).parent().hasClass('on')){
+			$(this).parent().removeClass('on');
+		}else{
+			$(this).parent().addClass('on');
+		}
+	});
+});
+</script>
+</head>
+
+<body>
+	<header>
+		<h1>CU</h1>
+		<span id="mobileMenuBtn" class="btn">
+			<a href="#" title="메뉴 펼치기"><span class="hide">펼치기</span></a>
+		</span>
+		
+		<div onclick="history.back();" class="page_cover"></div>
+		<div id="menu">
+			<div onclick="history.back();" class="close"></div>
+			<ul class="mMenuList">
+				<li>
+					<a href="#" title="국내택배">국내택배</a>
+					<div class="subMenu">
+						<a href="#" title="택배예약">택배예약</a>
+						<a href="#" title="대량발송택배예약">대량발송택배예약</a>
+						<a href="#" title="이용안내">이용안내</a>
+					</div>
+				</li>
+				<li>
+					<a href="#" title="국제특송">국제특송</a>
+					<div class="subMenu">
+						<a href="#" title="국제특송예약">국제특송예약</a>
+						<a href="#" title="배송가능국가">배송가능국가</a>
+						<a href="#" title="이용안내">이용안내</a>
+					</div>
+				</li>
+				<li>
+					<a href="#" title="배송조회">배송조회</a>
+					<div class="subMenu">
+						<a href="#" title="국내택배">국내택배</a>
+						<a href="#" title="국제특송">국제특송</a>
+						<a href="#" title="편의점PICK-UP">편의점PICK-UP</a>
+					</div>
+				</li>
+				<li>
+					<a href="#" title="이벤트&소식">이벤트&amp;소식</a>
+					<div class="subMenu">
+						<a href="#" title="이벤트">이벤트</a>
+						<a href="#" title="당첨자발표">당첨자발표</a>
+						<a href="#" title="CUpost소식">CUpost소식</a>
+						<a href="#" title="공지사항">공지사항</a>
+					</div>
+				</li>
+				<li>
+					<a href="#" title="회원혜택">회원혜택</a>
+					<div class="subMenu">
+						<a href="#" title="등급별혜택">등급별혜택</a>
+						<a href="#" title="할인쿠폰">할인쿠폰</a>
+						<a href="#" title="회원등급 및 제휴신청">회원등급 및 제휴신청</a>
+					</div>
+				</li>
+			</ul>
+		</div><!-- #menu -->
+
+		<nav>
+			<div id="gnb">
+				<ul>
+					<li>
+						<a href="#" title="국내택배">국내택배</a>
+						<div class="sub_menu">
+							<a href="#" title="택배예약">택배예약</a>
+							<a href="#" title="대량발송택배예약">대량발송택배예약</a>
+							<a href="#" title="이용안내">이용안내</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" title="국제특송">국제특송</a>
+						<div class="sub_menu">
+							<a href="#" title="국제특송예약">국제특송예약</a>
+							<a href="#" title="배송가능국가">배송가능국가</a>
+							<a href="#" title="이용안내">이용안내</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" title="배송조회">배송조회</a>
+						<div class="sub_menu">
+							<a href="#" title="국내택배">국내택배</a>
+							<a href="#" title="국제특송">국제특송</a>
+							<a href="#" title="편의점PICK-UP">편의점PICK-UP</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" title="이벤트&소식">이벤트&amp;소식</a>
+						<div class="sub_menu">
+							<a href="#" title="이벤트">이벤트</a>
+							<a href="#" title="당첨자발표">당첨자발표</a>
+							<a href="#" title="CUpost소식">CUpost소식</a>
+							<a href="#" title="공지사항">공지사항</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" title="회원혜택">회원혜택</a>
+						<div class="sub_menu">
+							<a href="#" title="등급별혜택">등급별혜택</a>
+							<a href="#" title="할인쿠폰">할인쿠폰</a>
+							<a href="#" title="회원등급 및 제휴신청">회원등급 및 제휴신청</a>
+						</div>
+					</li>
+				</ul>	
+			</div><!-- #gnb -->
+		</nav>
+	</header>
+<!--  	<section id="section1">
+	</section> -->
+	
+	<div id="setcion1_bg">		
+		<figure>
+	       	<li><img src="/common/images/slide1.png" alt=""/></li>
+	        <li><img src="/common/images/slide2.png" alt=""/></li>
+	        <li><img src="/common/images/slide3.png" alt=""/></li>
+	        <li><img src="/common/images/slide4.png" alt=""/></li>
+	        <li><img src="/common/images/slide5.png" alt=""/></li>
+		</figure>
+	</div>
+	
+	<section id="section2">
+		<div class="w50p fl h100p mHauto mImgBg1">
+			<div class="item_left h100p">
+				<div class="item section2_item1"></div>
+				<div class="txt2 tac">
+					<span>국내 택배 예약</span><br><span class="sub_txt">바로가기</span>
+				</div>
+			</div>
+		</div>
+		<div class="w50p fl h100p">
+			<div class="item_right1 h50p mImgBg2">
+				<div class="item section2_item2"></div>
+				<div class="txt tac">
+					<span>배송조회</span><br><span class="sub_txt">바로가기</span>
+				</div>
+			</div>
+			<div class="item_right2 h50p mImgBg3">
+				<div class="item section2_item3"></div>
+				<div class="txt tac">
+					<span>편의점 위치찾기</span><br><span class="sub_txt">바로가기</span>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	
+	<section id="section3">
+		<h1>Event</h1>
+		<div class="title">CU의 새소식을 전해드립니다.</div>
+		
+		<div class="eventWrapper">
+			<ul class="eventList">
+				<li class="eventBox">
+					<a href="#" title="event1">
+						<span>
+							<img src="/common/images/event1.jpg" alt=""/>
+						</span>
+						<span class="txtArea">
+							<span class="txt">택배를 현명하게 보내는 방법</span>
+							<span class="ctn">신한FAN택배 보낼떄마다 500원 캐시백!</span>
+							<span class="date">2018.10.23</span>
+						</span>
+					</a>
+				</li>
+				<li class="eventBox">
+					<a href="#" title="event2">
+						<span>
+							<img src="/common/images/event2.jpg" alt=""/>
+						</span>
+						<span class="txtArea">
+							<span class="txt">택배를 현명하게 보내는 방법</span>
+							<span class="ctn">신한FAN택배 보낼떄마다 500원 캐시백!</span>
+							<span class="date">2018.10.23</span>
+						</span>
+					</a>
+				</li>
+				<li class="eventBox">
+					<a href="#" title="event3">
+						<span>
+							<img src="/common/images/event3.jpg" alt=""/>
+						</span>
+						<span class="txtArea">
+							<span class="txt">택배를 현명하게 보내는 방법</span>
+							<span class="ctn">신한FAN택배 보낼떄마다 500원 캐시백!</span>
+							<span class="date">2018.10.23</span>
+						</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</section>
+	
+	<footer>
+		<div class="footerWrapper">
+			<div class="compGuide">
+				<a href="#">개인정보처리방침</a>
+				<a href="#">이용약관</a>
+				<a href="#">찾아오시는길</a>
+			</div>
+			<div class="compInfo">
+				<p class="fir">본사 경기도 평택시 진위면 동부대로 202 </p>
+				<p>사업장주소 서울특별시 강남구 강남대로 456 한석타워 11/12층</p><br>
+				<p class="fir">대표이사 김성식</p>
+				<p>사업자등록번호 128-81-06145</p>
+				<p>통신판매번호 2015-경기송탄-133</p><br>
+				<p class="fir">고객센터 1644-0806</p>
+			</div>
+			
+			<div class="snsPack">
+				<a href="#" title="새창열림" target="_blank"><img src="/common/images/foot_sns1.png" alt="인스타그램"></a>
+				<a href="#" title="새창열림" target="_blank"><img src="/common/images/foot_sns2.png" alt="페이스북"></a>
+				<a href="#" title="새창열림" target="_blank"><img src="/common/images/foot_sns3.png" alt="블로그"></a>
+			</div>
+			
+			<p class="copyright">COPYRIGHT 2017 HAATZ INC. ALL RIGHTS RESERVED.</p>
+		</div>	
+	</footer>
+</body>
+</html>
